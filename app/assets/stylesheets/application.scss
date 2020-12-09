@@ -1,1 +1,43 @@
 @import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+.card{
+  background: white;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  border: black;
+  padding: 0;
+}
+
+.card-banner{
+  height: 180px;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-content{
+  padding: 24px;
+  background-color: #F8F9FA;
+}
+
+a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.brand a{
+color: black;
+font-size: 20px;
+}
+
+.show-card{
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  border: black;
+  background-color: #F8F9FA;
+  margin-top: 25px;
+}
