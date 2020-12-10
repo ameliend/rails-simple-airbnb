@@ -15,14 +15,28 @@
         <div class="brand">
           <%= link_to "Simple Airbnb", flats_path %>
         </div>
-        <p class="btn btn-outline-primary"> <%= link_to "Add Flat", new_flat_path %></p>
+        <div class="d-flex">
+          <p class="btn btn-outline-primary mr-3"> <%= link_to "Add Flat", new_flat_path %></p>
+          <form>
+            <div class="form-group d-flex ">
+              <input type="search" class="form-control" name="query" id="search" placeholder="search">
+              <button type="submit" class="btn btn-primary mb-2">Search</button>
+            </div>
+          </form>
+        </div>
     </nav>
 
-    <div class="container">
+
       <%= yield %>
-    </div>
 
   </body>
 </html>
 
+<!--
+# <%= form_tag(flats_path method: :get) do %>
+#             search  <%= text_field_tag :search, params[:search] %>
+#           <% Flat.all %>
+#           <%= submit_tag 'Search', name: nil %>
+#           <% end %>
 
+ -->

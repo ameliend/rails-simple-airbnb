@@ -1,36 +1,40 @@
-<h1>All our Flats</h1>
+<div class="container">
 
-<p>All <%= Flat.count %> flats. </p>
+  <h1>All our Flats</h1>
 
-<div class="row mt-5">
-  <% @flats.each do |flat|  %>
-    <div class="col-4">
-      <div class="card">
-        <div class="card-banner" style="background-image: url('<%= flat.picture_url %>)">
-        </div>
+  <p>All <%= Flat.count %> flats. </p>
 
-        <div class="card-content">
-          <h4><%= flat.name %></h4>
-          <p><%= flat.address %></p>
-          <div class="d-flex justify-content-around">
-            <p><%= flat.price_per_night %></p>
-            <p><%= flat.number_of_guests %></p>
+
+  <div class="row mt-5">
+    <% @flats.each do |flat|  %>
+      <div class="col-4">
+        <div class="card">
+          <div class="card-banner" style="background-image: url('<%= flat.picture_url %>)">
+            </div>
+              <div class="card-content">
+                <h4><%= flat.name %></h4>
+                <p><%= flat.address %></p>
+                <div class="d-flex">
+                    <p><i class="fas fa-user-alt"></i>   <%= flat.price_per_night %></p>
+                    <p><i class="fas fa-euro-sign pl-4"></i>   <%= flat.number_of_guests %></p>
+                </div>
+              </div>
+
+              <div class="card-crud d-flex pl-4 pb-0">
+                <%= link_to flat_path(flat) do %>
+                  <p class="text-primary pr-3">More info</p>
+                <% end %>
+
+                <%= link_to edit_flat_path(flat) do %>
+                    <p class="text-warning pr-3">Édit</p>
+                <% end %>
+
+                <%= link_to flat_path(flat), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <p class="text-danger">Delete</p>
+                <% end %>
+              </div>
           </div>
-        </div>
-
-        <div class="card-crud d-flex pl-4 pb-0">
-          <%= link_to flat_path(flat) do %>
-            <p class="text-primary pr-3">More info</p>
-          <% end %>
-          <%= link_to edit_flat_path(flat) do %>
-            <p class="text-warning pr-3">Édit</p>
-          <% end %>
-          <%= link_to flat_path(flat), method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <p class="text-danger">Delete</p>
-          <% end %>
-        </div>
-
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

@@ -1,11 +1,15 @@
 @import "bootstrap/scss/bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
 
 
 .card{
   background: white;
-  padding: 30px;
+  padding: 20px;
   border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
   border: black;
@@ -34,10 +38,28 @@ font-size: 20px;
 }
 
 .show-card{
-  padding: 30px;
+  padding: 20px;
   border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
   border: black;
   background-color: #F8F9FA;
   margin-top: 25px;
+}
+
+.show-banner{
+height: 350px;
+background-position: center;
+background-size: cover;
+}
+
+.show-content{
+  margin-top: -86px;
+}
+
+.show-flat-description{
+  height: 500px;
+}
+
+.share-card i {
+  font-size: 24px;
 }
